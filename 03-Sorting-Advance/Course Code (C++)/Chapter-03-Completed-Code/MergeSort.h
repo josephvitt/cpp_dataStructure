@@ -17,9 +17,11 @@ void __merge(T arr[], int l, int mid, int r){
     //* VS不支持动态长度数组, 即不能使用 T aux[r-l+1]的方式申请aux的空间
     //* 使用VS的同学, 请使用new的方式申请aux空间
     //* 使用new申请空间, 不要忘了在__merge函数的最后, delete掉申请的空间:)
+    //----------和当前的arr这个数组的空间一样大
     T aux[r-l+1];
     //T *aux = new T[r-l+1];
 
+    //当前要处理的arr数组元素复制到aux[]中去
     for( int i = l ; i <= r; i ++ )
         aux[i-l] = arr[i];
 
@@ -60,7 +62,7 @@ void __mergeSort(T arr[], int l, int r){
 // 未经优化的归并排序算法
 template<typename T>
 void mergeSort(T arr[], int n){
-
+    //0~n-1这个数组
     __mergeSort( arr , 0 , n-1 );
 }
 
